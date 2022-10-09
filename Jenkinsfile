@@ -10,11 +10,11 @@ node {
     stage('dockerbuild') {
 
       echo 'running docker build'
-      sh 'docker build -t webapp:latest .'
+      sh 'sudo docker build -t webapp:latest .'
     } 
       stage('run-container') {
 
       echo 'running docker cotainer and exposing'
-      sh 'docker run -it --name webapp-test -p 81:80 -d webapp:latest'
+      sh 'sudo docker run -it --name webapp-test -p 81:80 -d webapp:latest'
     } 
 }
