@@ -15,6 +15,6 @@ node {
       stage('run-container') {
 
       echo 'running docker cotainer and exposing'
-      sh 'docker run -it --name apache-test -p 81:80 -d webapp:latest'
+      sh 'docker run -it --name webapp-test -p 81:80 -d webapp:latest'
     } 
 }
