@@ -15,7 +15,7 @@ node {
     stage('dockerbuild') {
 
       echo 'running docker build'
-      sh 'docker build -t webapp:latest /build/'
+      sh 'docker build -t webapp:latest .'
     } 
       stage('run-container') {
 
