@@ -12,6 +12,15 @@ node {
       echo 'running docker build'
       sh 'sudo docker build -t webapp:latest .'
     } 
+ 
+        stage('remove existing container') {
+          echo 'running docker cotainer and exposing'
+          try {
+           sh 'sudo  docker rm -f webapp-test'
+          } catch (err) {
+        echo "Caught: ${err}"
+          }
+    } 
       stage('run-container') {
 
       echo 'running docker cotainer and exposing'
