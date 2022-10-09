@@ -1,5 +1,5 @@
 String repoUrl = "https://github.com/madhus2020/website.git"
-String branch = "master"
+String branch = "develop"
 node {
   // Start Stages
   stage('Clone') {
