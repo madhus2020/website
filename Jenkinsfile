@@ -11,4 +11,14 @@ node {
           git branch: master, url: repoUrl
       }     
   }       
+    stage('dockerbuild') {
+
+      echo 'running docker build'
+      sh 'docker build -t webapp:latest /build/'
+    } 
+      stage('run-container') {
+
+      echo 'running docker cotainer and exposing'
+      sh 'docker run -it --name apache-test -p 81:80 -d webapp:latest'
+    } 
 }
