@@ -4,13 +4,8 @@ node {
   // Start Stages
   stage('Clone') {
       // Clones the repository from the current branch name
-      echo 'Make the output directory'
-      sh 'mkdir -p build'
-
-      echo 'Cloning files from master'
-      dir('build') {
-          git branch: branch, url: repoUrl
-      }     
+      echo 'Clone the master code'
+      git branch: branch, url: repoUrl 
   }       
     stage('dockerbuild') {
 
