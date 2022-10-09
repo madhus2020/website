@@ -1,4 +1,5 @@
 String repoUrl = "https://github.com/madhus2020/website.git"
+String branch = "master"
 node {
   // Start Stages
   stage('Clone') {
@@ -8,7 +9,7 @@ node {
 
       echo 'Cloning files from master'
       dir('build') {
-          git branch: master, url: repoUrl
+          git branch: branch, url: repoUrl
       }     
   }       
     stage('dockerbuild') {
